@@ -17,9 +17,13 @@ dependencies:
   flutter_shapes: ^0.3.0
   collection: ^1.15.0
   floodfill_image:
-    path: /Users/mikhailszugalew/Documents/GitHub/FloodFill_Image
+    git:
+      url: https://github.com/Szugalew/FloodFill_Image.git # github url
+      ref: main # branch name
   rounded_background_text:
-    path: /Users/mikhailszugalew/Documents/GitHub/rounded_background_text
+    git:
+      url: https://github.com/Szugalew/rounded_background_text.git # github url
+      ref: main # branch name
 
 dev_dependencies:
   flutter_lints: ^1.0.4
