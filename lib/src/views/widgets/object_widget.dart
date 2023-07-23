@@ -978,7 +978,7 @@ class _ObjectControlBox extends StatelessWidget {
     return Container();
     ThemeData? theme = Theme.of(context);
     if (theme == ThemeData.fallback()) theme = null;
-    final activeColor = this.activeColor ?? theme?.accentColor ?? Colors.blue;
+    final activeColor = this.activeColor ?? Colors.blue;
     return AnimatedContainer(
       duration: _ObjectWidgetState.controlsTransitionDuration,
       decoration: BoxDecoration(
