@@ -52,7 +52,9 @@ class InkFreehandDrawable extends PathDrawable {
     // 1. Get the outline points from the input points
     final outlinePoints = getStroke(
       this.path.map((e) => Point(e.dx, e.dy)).toList(),
-      size: strokeWidth,
+      options: StrokeOptions(
+        size: strokeWidth,
+      ),
     );
 
     // 2. Render the points as a path
@@ -63,15 +65,15 @@ class InkFreehandDrawable extends PathDrawable {
       return;
     } else if (outlinePoints.length < 2) {
       // If the list only has one point, draw a dot.
-      path.addOval(Rect.fromCircle(center: Offset(outlinePoints[0].x, outlinePoints[0].y), radius: 1));
+      path.addOval(Rect.fromCircle(center: Offset(outlinePoints[0].dx, outlinePoints[0].dy), radius: 1));
     } else {
       // Otherwise, draw a line that connects each point with a bezier curve segment.
-      path.moveTo(outlinePoints[0].x, outlinePoints[0].y);
+      path.moveTo(outlinePoints[0].dx, outlinePoints[0].dy);
 
       for (int i = 1; i < outlinePoints.length - 1; ++i) {
         final p0 = outlinePoints[i];
         final p1 = outlinePoints[i + 1];
-        path.quadraticBezierTo(p0.x, p0.y, (p0.x + p1.x) / 2, (p0.y + p1.y) / 2);
+        path.quadraticBezierTo(p0.dx, p0.dy, (p0.dx + p1.dx) / 2, (p0.dy + p1.dy) / 2);
       }
     }
 

@@ -12,10 +12,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  google_fonts: ^4.0.0
-  perfect_freehand: ^1.0.4
+  google_fonts: any
+  perfect_freehand: any
   flutter_shapes: ^0.3.0
-  collection: ^1.15.0
+  collection: any
   floodfill_image:
     git:
       url: https://github.com/Szugalew/FloodFill_Image.git # github url
