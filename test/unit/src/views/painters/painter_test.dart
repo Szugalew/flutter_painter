@@ -194,7 +194,7 @@ class _ArrangeBuilder {
   }
 }
 
-class FakePaint extends Fake implements Paint {}
+class FakePaint extends Fake {}
 
 class MockCanvas extends Mock implements Canvas {}
 
